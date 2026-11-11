@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <title>UniBook - Sign Up</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+
 </head>
 
 <body>
@@ -24,45 +26,49 @@
     </nav>
     <main>
         <h2>Sign Up</h2>
-        <form method="post">
+        <form name="signupForm" method="post" onsubmit="return validateSignup()" onreset="clearupSignup()">
             <p>
                 <label>
                     <b>First Name:</b>
-                    <input type="text" name="fname" size="20" maxlength="25" required />
+                    <input type="text" name="fname" size="20" maxlength="25" />
                 </label>
             </p>
+            <p id="FnameMsg"></p>
             <p>
                 <label>
                     <b>Last Name:</b>
-                    <input type="text" name="lname" size="20" maxlength="25" required />
+                    <input type="text" name="lname" size="20" maxlength="25" />
                 </label>
             </p>
+            <p id="LnameMsg"></p>
             <p>
                 <label>
                     <b>Username:</b>
-                    <input type="text" name="Username" size="20" maxlength="25" required />
+                    <input type="text" name="Username" size="20" maxlength="25" />
                 </label>
             </p>
+            <p id="UserMsg"></p>
             <p>
                 <label>
                     <b>Email:</b>
-                    <input type="email" name="email" placeholder="name@stu.kau.edu.sa" size="20" maxlength="50"
-                        required />
+                    <input type="email" name="email" placeholder="name@stu.kau.edu.sa" size="20" maxlength="50" />
                 </label>
             </p>
+            <p id="EmailMsg"></p>
             <p>
                 <label>
                     <b>Password:</b>
-                    <input type="password" name="psw" placeholder="At least 8 Characters" size="20" maxlength="25"
-                        required />
+                    <input type="password" name="psw" placeholder="At least 8 Characters" size="20" maxlength="25" />
                 </label>
             </p>
+            <p id="PswMsg"></p>
             <p>
                 <label>
                     <b>Confirm Password:</b>
-                    <input type="password" name="cpsw" size="20" maxlength="25" required />
+                    <input type="password" name="cpsw" size="20" maxlength="25" />
                 </label>
             </p>
+            <p id="CpswMsg"></p>
 
             <p><b>Choose your faculty:</b></p>
 
@@ -77,10 +83,12 @@
 
             Faculty of Business
             </label>
+            <p id="FacMsg"></p>
             <p>
                 <input type="submit" value="Submit" size="10" />
                 <input type="reset" value="Clear" size="10" />
             </p>
+            <p id="signupResult"></p>
         </form>
 
         <p>Already have an account? <a href="login.html">Login</a></p>
