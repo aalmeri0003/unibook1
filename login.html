@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>UniBook - Login</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -24,23 +25,29 @@
     </nav>
     <main>
         <h2>Login</h2>
-        <form method="post">
+        <form name="loginForm" method="post" onsubmit="return validateLogin()">
             <p>
                 <label>
                     <b>Username:</b>
-                    <input type="text" name="Username" size="20" maxlength="25" required />
+                    <input type="text" name="Username" size="20" maxlength="25" />
                 </label>
-            </p>
+            </p>                
+            <p id="UserMsg"></p>
+
             <p>
                 <label>
                     <b>Password:</b>
-                    <input type="password" name="psword" size="20" maxlength="25" required />
+                    <input type="password" name="psword" size="20" maxlength="25" />
                 </label>
-            </p>
+            </p>            
+            <p id="PassMsg"></p>
+
             <p>
                 <input type="submit" value="Submit" size="10" />
                 <input type="reset" value="Clear" size="10" />
             </p>
+            <p id="loginResult"></p>
+
 
         </form>
         <p>If you don't have an account <a href="signup.html">Sign Up</a></p>
