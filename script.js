@@ -24,3 +24,60 @@ function validateLogin(){
     }
 return false
 }
+function validateSignup(){
+    var Fname = document.forms["signupForm"]["fname"].value;
+    var Lname = document.forms["signupForm"]["lname"].value;
+    var username = document.forms["signupForm"]["Username"].value;
+    var email = document.forms["signupForm"]["email"].value;
+    var password = document.forms["signupForm"]["psw"].value;
+    var Cpassword = document.forms["signupForm"]["cpsw"].value;
+    var faculity = document.forms["signupForm"]["fac"].value;
+
+    if(Fname == ""){
+        document.getElementById("FnameMsg").innerHTML="First name is required";
+        document.getElementById("FnameMsg").style.color="red";
+    }else{
+        document.getElementById("FnameMsg").innerHTML = "";
+    }
+    if(Lname == ""){
+        document.getElementById("LnameMsg").innerHTML="Last name is required";
+        document.getElementById("LnameMsg").style.color="red";
+    }else{
+        document.getElementById("LnameMsg").innerHTML = "";
+    }
+    if(username == ""){
+        document.getElementById("UserMsg").innerHTML="Username is required";
+        document.getElementById("UserMsg").style.color="red";
+    }else{
+        document.getElementById("UserMsg").innerHTML = "";
+    }
+    if(email == ""){
+        document.getElementById("EmailMsg").innerHTML="Email is required";
+        document.getElementById("EmailMsg").style.color="red";
+    }else{
+        document.getElementById("EmailMsg").innerHTML = "";
+    }
+    if(password == ""){
+        document.getElementById("PswMsg").innerHTML="Password is required";
+        document.getElementById("PswMsg").style.color="red";
+    }else{
+        document.getElementById("PswMsg").innerHTML = "";
+    }
+    if(Cpassword == ""){
+        document.getElementById("CpswMsg").innerHTML="Confirm Password";
+        document.getElementById("CpswMsg").style.color="red";
+    }else if (password != Cpassword){
+        document.getElementById("CpswMsg").innerHTML="Password does not match";
+        document.getElementById("CpswMsg").style.color="red";
+    }else{
+        document.getElementById("CpswMsg").innerHTML = "";
+    }
+    if(Fname != "" && Lname != "" && username != "" && email != "" && password != "" && Cpassword!= ""){
+        document.getElementById("signupResult").innerHTML = "Account created successfully";
+        document.getElementById("signupResult").style.color = "green";
+    }
+        else{
+        document.getElementById("loginResult").innerHTML = "";
+    }
+return false
+}
