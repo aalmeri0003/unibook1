@@ -91,3 +91,20 @@ function clearupSignup() {
     document.getElementById("FacMsg").innerHTML = "";
     document.getElementById("signupResult").innerHTML = "";
 }
+function showPrices() {
+    var text = "";
+    for ( var i = 1; i <= 5; i++ ){
+        text = text + i + " copies = " + (i * 160) + " SR<br>";
+    }
+    document.getElementById("priceList").innerHTML = text;
+}
+function bookOver() {
+    document.getElementById("book1").style.border = "3px solid green";
+    document.getElementById("bookCaption").innerHTML = "CPIS-358 book: 160 SR new, 95 SR used";
+}
+
+function bookOut() {
+    document.getElementById("book1").style.border = "none";
+    document.getElementById("bookCaption").innerHTML = "";
+}
+
