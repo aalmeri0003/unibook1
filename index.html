@@ -6,10 +6,14 @@
     <title>UniBook - Home</title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script src="script.js"></script>
-    
+    <script>
+        function start() {
+        document.getElementById("welcome").innerHTML = "Welcome to UniBook, find your KAU textbooks here";
+        }
+</script>
 </head>
 
-<body>
+<body onload="start()">
     <header>
     <img src="logo.jpg" alt="UniBook logo" width="120" height="120" usemap="#logo" />
         <map name="logo">
@@ -25,6 +29,7 @@
     </nav>
     <main>
         <h2>Welcome To UniBook</h2>
+        <p id="welcome"></p>
         <p id="bookCaption"></p>
         <article>
             
@@ -49,8 +54,9 @@
             <p style="text-align: center;">
                 <label>
                     <b>Search:</b>
-                    <input type="text" name="Serbook" size="70" maxlength="100" />
+                    <input type="text" id="searchBox" name="Serbook" size="70" maxlength="100" onblur="showSearch()" />
                 </label>
+                <p id="searchMsg"></p>
             </p>
             <input type="button" value="Show prices for 1 to 5 copies" onclick="showPrices()">
             <p id="priceList"></p>

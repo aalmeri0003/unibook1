@@ -22,7 +22,7 @@ function validateLogin(){
     }else{
         document.getElementById("loginResult").innerHTML = "";
     }
-return false
+return false;
 }
 function validateSignup(){
     var Fname = document.forms["signupForm"]["fname"].value;
@@ -106,5 +106,22 @@ function bookOver() {
 function bookOut() {
     document.getElementById("book1").style.border = "none";
     document.getElementById("bookCaption").innerHTML = "";
+}
+function showSearch() {
+    var query = document.getElementById("searchBox").value;
+    if (query == "") {
+        document.getElementById("searchMsg").style.color = "red";
+        document.getElementById("searchMsg").innerHTML = "Please type a book name";
+    } else {
+        document.getElementById("searchMsg").style.color = "green";
+        document.getElementById("searchMsg").innerHTML = "Searching for: " + query;
+    }
+}
+function toggleTeam() {
+    if (document.getElementById("teamSection").style.display == "none") {
+        document.getElementById("teamSection").style.display = "block";
+    } else {
+        document.getElementById("teamSection").style.display = "none";
+    }
 }
 
