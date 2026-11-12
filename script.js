@@ -31,7 +31,6 @@ function validateSignup(){
     var email = document.forms["signupForm"]["email"].value;
     var password = document.forms["signupForm"]["psw"].value;
     var Cpassword = document.forms["signupForm"]["cpsw"].value;
-    var faculity = document.forms["signupForm"]["fac"].value;
 
     if(Fname == ""){
         document.getElementById("FnameMsg").innerHTML="First name is required";
