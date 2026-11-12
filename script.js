@@ -77,7 +77,17 @@ function validateSignup(){
         document.getElementById("signupResult").style.color = "green";
     }
         else{
-        document.getElementById("loginResult").innerHTML = "";
+        document.getElementById("signupResult").innerHTML = "";
     }
-return false
+return false;
+}
+function clearupSignup() {
+    document.getElementById("FnameMsg").innerHTML = "";
+    document.getElementById("LnameMsg").innerHTML = "";
+    document.getElementById("UserMsg").innerHTML = "";
+    document.getElementById("EmailMsg").innerHTML = "";
+    document.getElementById("PswMsg").innerHTML = "";
+    document.getElementById("CpswMsg").innerHTML = "";
+    document.getElementById("FacMsg").innerHTML = "";
+    document.getElementById("signupResult").innerHTML = "";
 }
