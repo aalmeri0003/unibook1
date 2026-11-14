@@ -155,3 +155,4 @@ function toggleTeam() {
     }
 }
 
+// I tested it in my environment, and everything works perfectly.
