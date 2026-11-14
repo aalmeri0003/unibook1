@@ -28,6 +28,7 @@ function validateLogin(){
 return false; // stop the page from reloading
 }
 // ------------------------------------------------------------
+// Sign up page: checks every box, password match, and that a faculty is picked
 function validateSignup(){
     var Fname = document.forms["signupForm"]["fname"].value;
     var Lname = document.forms["signupForm"]["lname"].value;
