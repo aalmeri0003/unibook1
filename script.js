@@ -79,8 +79,8 @@ function validateSignup(){
         document.getElementById("CpswMsg").innerHTML = "";
     }
 	 if (facChosen == false) {
-		 document.getElementById
-		 
+		 document.getElementById("FacMsg").innerHTML = "Please choose your faculty";
+		  document.getElementById("FacMsg").style.color = "any color"; // any color you want Abdulmajeed ex: red,blue etc..
 		 
 		 
     if(Fname != "" && Lname != "" && username != "" && email != "" && password != "" && Cpassword!= "" && password == Cpassword){
