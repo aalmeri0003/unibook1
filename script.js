@@ -133,6 +133,8 @@ function bookOut() {
     document.getElementById("book1").style.border = "none";
     document.getElementById("bookCaption").innerHTML = "";
 }
+// ------------------------------------------------------------
+// Home page: when you leave the search box, tell the user what they searched for
 function showSearch() {
     var query = document.getElementById("searchBox").value;
     if (query == "") {
@@ -143,6 +145,8 @@ function showSearch() {
         document.getElementById("searchMsg").innerHTML = "Searching for: " + query;
     }
 }
+// ------------------------------------------------------------
+// About page: button hides or shows the team section
 function toggleTeam() {
     if (document.getElementById("teamSection").style.display == "none") {
         document.getElementById("teamSection").style.display = "block";
