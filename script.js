@@ -78,6 +78,11 @@ function validateSignup(){
     }else{
         document.getElementById("CpswMsg").innerHTML = "";
     }
+	 if (facChosen == false) {
+		 document.getElementById
+		 
+		 
+		 
     if(Fname != "" && Lname != "" && username != "" && email != "" && password != "" && Cpassword!= "" && password == Cpassword){
         document.getElementById("signupResult").innerHTML = "Account created successfully";
         document.getElementById("signupResult").style.color = "green";
