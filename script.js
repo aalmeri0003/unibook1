@@ -120,11 +120,15 @@ function showPrices() {
     }
     document.getElementById("priceList").innerHTML = text;
 }
+// ------------------------------------------------------------
+// Home page: mouse on the CPIS-358 book adds a green border and shows its price
 function bookOver() {
     document.getElementById("book1").style.border = "3px solid green";
     document.getElementById("bookCaption").innerHTML = "CPIS-358 book: 160 SR new, 95 SR used";
 }
 
+// ------------------------------------------------------------
+// Home page: mouse leaves the book, remove the border and the text
 function bookOut() {
     document.getElementById("book1").style.border = "none";
     document.getElementById("bookCaption").innerHTML = "";
