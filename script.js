@@ -35,7 +35,7 @@ function validateSignup(){
     var facChosen = false; // no faculty chosen yet
     for (var i = 0; i < fac.length; i++) { // go through each button
         if (fac[i].checked) { // this one is picked
-            facChosen = false;
+            facChosen = true;
         }
     }
 
