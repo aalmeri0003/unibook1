@@ -99,6 +99,8 @@ function validateSignup(){
     }
 return false;
 }
+// ------------------------------------------------------------
+// Sign up page: when Clear is pressed, remove all the messages too
 function clearupSignup() {
     document.getElementById("FnameMsg").innerHTML = "";
     document.getElementById("LnameMsg").innerHTML = "";
@@ -109,6 +111,8 @@ function clearupSignup() {
     document.getElementById("FacMsg").innerHTML = "";
     document.getElementById("signupResult").innerHTML = "";
 }
+// ------------------------------------------------------------
+// Home page: button shows the price for 1 to 5 copies using a loop
 function showPrices() {
     var text = "";
     for ( var i = 1; i <= 5; i++ ){
