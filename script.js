@@ -31,8 +31,8 @@ function validateSignup(){
     var email = document.forms["signupForm"]["email"].value;
     var password = document.forms["signupForm"]["psw"].value;
     var Cpassword = document.forms["signupForm"]["cpsw"].value;
-    var fac = document.forms["signupForm"]["fac"];
-    var facChosen = false;
+    var fac = document.forms["signupForm"]["fac"]; // get the 3 faculty radio buttons
+    var facChosen = false; // no faculty chosen yet
 
 
     if(Fname == ""){
