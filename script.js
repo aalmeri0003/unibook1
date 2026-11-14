@@ -1,6 +1,9 @@
 /*Assignment 2 UniBook
 Abdulmajeed Almeri: 2338695 & Riyadh Barnawi: 2336571
 */
+// Login page: checks username and password are not empty
+// shows a red message under the empty box, or a green welcome if all good
+
 function validateLogin(){
     var username = document.forms["loginForm"]["Username"].value;
     var password = document.forms["loginForm"]["psword"].value;
@@ -22,8 +25,9 @@ function validateLogin(){
     }else{
         document.getElementById("loginResult").innerHTML = "";
     }
-return false;
+return false; // stop the page from reloading
 }
+// ------------------------------------------------------------
 function validateSignup(){
     var Fname = document.forms["signupForm"]["fname"].value;
     var Lname = document.forms["signupForm"]["lname"].value;
