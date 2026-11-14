@@ -81,9 +81,11 @@ function validateSignup(){
 	 if (facChosen == false) {
 		 document.getElementById("FacMsg").innerHTML = "Please choose your faculty";
 		  document.getElementById("FacMsg").style.color = "any color"; // any color you want Abdulmajeed ex: red,blue etc..
+		    } else {
+        document.getElementById("FacMsg").innerHTML = "";
+    }
 		 
-		 
-    if(Fname != "" && Lname != "" && username != "" && email != "" && password != "" && Cpassword!= "" && password == Cpassword){
+        if(Fname != "" && Lname != "" && username != "" && email != "" && password != "" && Cpassword!= "" && password == Cpassword && facChosen){     // added facChosen so it won't say success without a faculty
         document.getElementById("signupResult").innerHTML = "Account created successfully";
         document.getElementById("signupResult").style.color = "green";
     }
