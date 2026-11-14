@@ -33,7 +33,11 @@ function validateSignup(){
     var Cpassword = document.forms["signupForm"]["cpsw"].value;
     var fac = document.forms["signupForm"]["fac"]; // get the 3 faculty radio buttons
     var facChosen = false; // no faculty chosen yet
-
+    for (var i = 0; i < fac.length; i++) { // go through each button
+        if (fac[i].checked) { // this one is picked
+            facChosen = false;
+        }
+    }
 
     if(Fname == ""){
         document.getElementById("FnameMsg").innerHTML="First name is required";
