@@ -1,0 +1,85 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="LoginPage" %>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>UniBook - Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+    <img src="logo.jpg" alt="UniBook logo" width="120" height="120" usemap="#logo" />
+        <map name="logo">
+            <area shape="rect" coords="0,0,120,120" href="about.aspx" alt="Go to About Us" />
+        </map>
+        <h1>UniBook</h1>
+    </header>
+
+    <nav>
+        <a href="index.aspx">Home</a>
+        <a href="login.aspx">Login</a>
+        <a href="signup.aspx">Sign Up</a>
+        <a href="about.aspx">About Us</a>
+        <a href="books.aspx">Manage Books</a>
+        <asp:Literal ID="litUser" runat="server" /> <!-- welcome + logout when logged in (session) -->
+    </nav>
+    <main>
+        <h2>Login</h2>
+        <form id="loginForm" runat="server" onsubmit="return validateLogin()">
+            <p>
+                <label>
+                    <b>Username:</b>
+                    <input type="text" name="Username" size="20" maxlength="25" value="<%= Server.HtmlEncode(savedUser) %>" />
+                </label>
+            </p>                
+            <p id="UserMsg"></p>
+
+            <p>
+                <label>
+                    <b>Password:</b>
+                    <input type="password" name="psword" size="20" maxlength="25" />
+                </label>
+            </p>            
+            <p id="PassMsg"></p>
+            <p>
+                <label>
+                    <input type="checkbox" name="remember" <%= rememberChecked %> /> Remember me
+                </label>
+            </p>
+
+            <p>
+                <input type="submit" value="Submit" size="10" />
+                <input type="reset" value="Clear" size="10" />
+            </p>
+            <p id="loginResult"><asp:Literal ID="litResult" runat="server" /></p>
+
+
+        </form>
+        <p>If you don't have an account <a href="signup.aspx">Sign Up</a></p>
+    </main>
+
+    <footer>
+
+        <div style="font-size: 20px; text-align: right;" >
+            
+            <h3 class="title">About Us</h3>
+            <a href="about.aspx"><img src="icoabo.png" alt="About icon" width="90" height="90" class="below"></a>
+            <img src="handab.png" alt="Pointing hand" width="45" height="45" class="above">
+            
+            
+        </div>
+        <b class="z">Customer Service</b>
+        <address>
+            <a href="mailto:aalmeri0003@stu.kau.edu.sa">aalmeri0003@stu.kau.edu.sa</a><br />
+            <a href="mailto:rbarnawi0015@stu.kau.edu.sa">rbarnawi0015@stu.kau.edu.sa</a>
+        </address>
+        <h6>&copy; 2026 UniBook - King Abdulaziz University. All rights reserved </h6>
+
+    </footer>
+
+</body>
+
+</html>
