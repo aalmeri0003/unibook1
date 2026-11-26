@@ -20,8 +20,7 @@ function validateLogin(){
         document.getElementById("PassMsg").innerHTML = "";
     }
     if(username != "" && password != ""){
-        document.getElementById("loginResult").innerHTML = "Login successful, welcome to UniBook";
-        document.getElementById("loginResult").style.color = "green";
+        return true; // all good, send the form to the server (ASP.NET checks the database)
     }else{
         document.getElementById("loginResult").innerHTML = "";
     }
@@ -91,8 +90,7 @@ function validateSignup(){
     }
 
     if(Fname != "" && Lname != "" && username != "" && email != "" && password != "" && Cpassword!= "" && password == Cpassword && facChosen){     // added facChosen so it won't say success without a faculty
-        document.getElementById("signupResult").innerHTML = "Account created successfully";
-        document.getElementById("signupResult").style.color = "green";
+        return true; // all good, send the form to the server (ASP.NET saves the user)
     }else{
         document.getElementById("signupResult").innerHTML = "";
     }
