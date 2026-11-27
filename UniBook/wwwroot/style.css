@@ -117,11 +117,52 @@ footer{
     color: red;
 }
 /*login and sign up pages*/
+/*the form box in the middle of the page*/
+.col-md-4{
+    max-width: 380px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ded0be;
+    border: 3px solid burlywood;
+    box-shadow: 3px 3px 4px rgb(63, 117, 104);
+}
+/*label above the text box*/
 .form-floating{
+    display: flex;
+    flex-direction: column;
     margin-bottom: 10px;
 }
 .form-floating label{
-    display: block;
+    order: 1;
+    font-weight: bold;
+    color: #256172;
+}
+.form-floating input{
+    order: 2;
+}
+.form-floating span{
+    order: 3;
+}
+.form-control{
+    padding: 8px;
+    border: 2px solid burlywood;
+}
+.btn{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #7ea87e;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #256172;
+}
+/*hide the "use another service to log in" box, we only use UniBook accounts*/
+.col-md-offset-2{
+    display: none;
 }
 /*green message after a book is added, updated or deleted*/
 .success{
