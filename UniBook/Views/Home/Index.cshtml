@@ -1,0 +1,192 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+@section Head {
+    <script>
+        function start() {
+        document.getElementById("welcome").innerHTML = "Welcome to UniBook, find your KAU textbooks here";
+        }
+        window.onload = start;
+    </script>
+}
+
+    <h2>Welcome To UniBook</h2>
+    <p id="welcome"></p>
+    <p id="bookCaption"></p>
+    @if (ViewBag.LastVisit != null)
+    {
+        <p>Welcome back! Your last visit was on @ViewBag.LastVisit</p>
+    }
+    <article>
+        
+        <h3>The Idea:</h3>
+        <p>
+            
+            <span class="general"> 
+                Students of KAU need course books in a place that is easy to find and with a fair price.
+                UniBook solves this problem by putting books of KAU faculties in one place to prevent confusion.
+            </span>
+           
+        </p>
+        <h3>Why UniBook:</h3>
+        <p>
+            <span class="general"> 
+                What makes UniBook special is that you can have the option for both new books or used ones from previous
+                 students
+                 which at a cheaper price. It focuses on specific segment which is KAU students, so, books do not get
+                mixed with other content.
+            </span>
+        </p>
+        <form asp-controller="Books" asp-action="ShowSearchFormResult">
+            <p style="text-align: center;">
+                <label>
+                    <b>Search:</b>
+                    <input type="text" id="searchBox" name="SearchBook" size="70" maxlength="100" onblur="showSearch()" />
+                </label>
+                <input type="submit" value="Search" />
+            </p>
+            <p id="searchMsg"></p>
+        </form>
+        <input type="button" value="Show prices for 1 to 5 copies" onclick="showPrices()">
+        <p id="priceList"></p>
+    </article>
+    <h2>Browse By Faculty</h2>
+    <ul>
+        <li><a href="#computing">Faculty of Computing and Information Technology</a></li>
+        <li><a href="#engineering">Faculty of Engineering</a></li>
+        <li><a href="#business">Faculty of Business</a></li>
+
+
+
+    </ul>
+    <section id="computing">
+        <h2>The Computing and Information Technology</h2>
+        <table>
+            <caption><b>Faculty of Computing and Information Technology Books</b></caption>
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Book Name</th>
+                    <th>Book Image</th>
+                    <th>Version</th>
+                    <th>New Book Price</th>
+                    <th>Used Book Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CPIS-358</td>
+                    <td>Internet &amp; World Wide Web, By Harvey M. Deitel, Paul J. Deitel, Abbey Deitel</td>
+                    <td><img id="book1" src="~/book1c.png" alt="bookimgc1" width="80" height="100" onmouseover="bookOver()" onmouseout="bookOut()"></td>
+                    <td>v5</td>
+                    <td>160 SR</td>
+                    <td>95 SR</td>
+                </tr>
+                <tr>
+                    <td>CPIS-363</td>
+                    <td>Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts,Tools, and Techniques
+                        to Build Intelligent Systems</td>
+                    <td><img src="~/book2c.png" alt="bookimgc2" width="80" height="100"></td>    
+                    <td>v1</td>
+                    <td>200 SR</td>
+                    <td>105 SR</td>
+                </tr>
+                <tr>
+                    <td>CPIS-342</td>
+                    <td>Data Mining: Concepts and Techniques, Jiawei Han, Micheline Kamber and Jian Pei</td>
+                    <td><img src="~/book3c.png" alt="bookimgc3" width="80" height="100"></td>
+                    <td>v3</td>
+                    <td>160 SR</td>
+                    <td>75 SR</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+    <section id="engineering">
+        <h2>Faculty of Engineering</h2>
+        <table>
+            <caption><b>The Engineering Books 2026</b></caption>
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Book Name</th>
+                    <th>Book Image</th>
+                    <th>Version</th>
+                    <th>New Book Price</th>
+                    <th>Used Book Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MENG-201</td>
+                    <td>Engineering Mechanics: Statics, R. C. Hibbeler</td>
+                    <td><img src="~/book1e.png" alt="bookimge1" width="80" height="100"></td>
+                    <td>v15</td>
+                    <td>210 SR</td>
+                    <td>125 SR</td>
+                </tr>
+                <tr>
+                    <td>MENG-230</td>
+                    <td>Thermodynamics: An Engineering Approach, Çengel, Boles &amp; Kanoğlu</td>
+                    <td><img src="~/book2e.png" alt="bookimge2" width="80" height="100"></td>
+                    <td>v10</td>
+                    <td>220 SR</td>
+                    <td>165 SR</td>
+                </tr>
+                <tr>
+                    <td>MATH-202</td>
+                    <td>Calculus: Early Transcendentals, James Stewart</td>
+                    <td><img src="~/book3e.png" alt="bookimge3" width="80" height="100"></td>
+                    <td>v9</td>
+                    <td>170 SR</td>
+                    <td>110 SR</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+    <section id="business">
+        <h2>Faculty of Business</h2>
+        <table>
+            <caption><b>The Business Books 2026</b></caption>
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Book Name</th>
+                    <th>Book Image</th>
+                    <th>Version</th>
+                    <th>New Book Price</th>
+                    <th>Used Book Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ECON-101</td>
+                    <td>Principles of Economics, N. Gregory Mankiw</td>
+                    <td><img src="~/book1b.png" alt="bookimgb1" width="80" height="100"></td>
+                    <td>v10</td>
+                    <td>140 SR</td>
+                    <td>90 SR</td>
+                </tr>
+                <tr>
+                    <td>ACCT-201</td>
+                    <td>Financial Accounting, Weygandt, Kimmel &amp; Kieso</td>
+                    <td><img src="~/book2b.png" alt="bookimgb2" width="80" height="100"></td>
+                    <td>v12</td>
+                    <td>130 SR</td>
+                    <td>65 SR</td>
+                </tr>
+                <tr>
+                    <td>MRKT-201</td>
+                    <td>Principles of Marketing</td>
+                    <td><img src="~/book3b.png" alt="bookimgb3" width="80" height="100"></td>
+                    <td>v19</td>
+                    <td>120 SR</td>
+                    <td>65 SR</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>

@@ -1,0 +1,157 @@
+/*Assignment 2 UniBook
+Abdulmajeed Almeri: 2338695 & Riyadh Barnawi: 2336571
+*/
+// Login page: checks username and password are not empty
+// shows a red message under the empty box, or a green welcome if all good
+
+function validateLogin(){
+    var username = document.forms["loginForm"]["Username"].value;
+    var password = document.forms["loginForm"]["psword"].value;
+    if(username == ""){
+        document.getElementById("UserMsg").innerHTML="Username is required";
+        document.getElementById("UserMsg").style.color="red";
+    }else{
+        document.getElementById("UserMsg").innerHTML = "";
+    }
+    if(password == ""){
+        document.getElementById("PassMsg").innerHTML="Password is required";
+        document.getElementById("PassMsg").style.color="red";
+    }else{
+        document.getElementById("PassMsg").innerHTML = "";
+    }
+    if(username != "" && password != ""){
+        document.getElementById("loginResult").innerHTML = "Login successful, welcome to UniBook";
+        document.getElementById("loginResult").style.color = "green";
+    }else{
+        document.getElementById("loginResult").innerHTML = "";
+    }
+return false; // stop the page from reloading
+}
+// ------------------------------------------------------------
+// Sign up page: checks every box, password match, and that a faculty is picked
+function validateSignup(){
+    var Fname = document.forms["signupForm"]["fname"].value;
+    var Lname = document.forms["signupForm"]["lname"].value;
+    var username = document.forms["signupForm"]["Username"].value;
+    var email = document.forms["signupForm"]["email"].value;
+    var password = document.forms["signupForm"]["psw"].value;
+    var Cpassword = document.forms["signupForm"]["cpsw"].value;
+    var fac = document.forms["signupForm"]["fac"]; // get the 3 faculty radio buttons
+    var facChosen = false; // no faculty chosen yet
+    for (var i = 0; i < fac.length; i++) { // go through each button
+        if (fac[i].checked) { // this one is picked
+            facChosen = true;
+        }
+    }
+
+    if(Fname == ""){
+        document.getElementById("FnameMsg").innerHTML="First name is required";
+        document.getElementById("FnameMsg").style.color="red";
+    }else{
+        document.getElementById("FnameMsg").innerHTML = "";
+    }
+    if(Lname == ""){
+        document.getElementById("LnameMsg").innerHTML="Last name is required";
+        document.getElementById("LnameMsg").style.color="red";
+    }else{
+        document.getElementById("LnameMsg").innerHTML = "";
+    }
+    if(username == ""){
+        document.getElementById("UserMsg").innerHTML="Username is required";
+        document.getElementById("UserMsg").style.color="red";
+    }else{
+        document.getElementById("UserMsg").innerHTML = "";
+    }
+    if(email == ""){
+        document.getElementById("EmailMsg").innerHTML="Email is required";
+        document.getElementById("EmailMsg").style.color="red";
+    }else{
+        document.getElementById("EmailMsg").innerHTML = "";
+    }
+    if(password == ""){
+        document.getElementById("PswMsg").innerHTML="Password is required";
+        document.getElementById("PswMsg").style.color="red";
+    }else{
+        document.getElementById("PswMsg").innerHTML = "";
+    }
+    if(Cpassword == ""){
+        document.getElementById("CpswMsg").innerHTML="Confirm Password";
+        document.getElementById("CpswMsg").style.color="red";
+    }else if (password != Cpassword){
+        document.getElementById("CpswMsg").innerHTML="Password does not match";
+        document.getElementById("CpswMsg").style.color="red";
+    }else{
+        document.getElementById("CpswMsg").innerHTML = "";
+    }
+    if (facChosen == false) {
+        document.getElementById("FacMsg").innerHTML = "Please choose your faculty";
+        document.getElementById("FacMsg").style.color = "red";
+    } else {
+        document.getElementById("FacMsg").innerHTML = "";
+    }
+
+    if(Fname != "" && Lname != "" && username != "" && email != "" && password != "" && Cpassword!= "" && password == Cpassword && facChosen){     // added facChosen so it won't say success without a faculty
+        document.getElementById("signupResult").innerHTML = "Account created successfully";
+        document.getElementById("signupResult").style.color = "green";
+    }else{
+        document.getElementById("signupResult").innerHTML = "";
+    }
+return false;
+}
+// ------------------------------------------------------------
+// Sign up page: when Clear is pressed, remove all the messages too
+function clearupSignup() {
+    document.getElementById("FnameMsg").innerHTML = "";
+    document.getElementById("LnameMsg").innerHTML = "";
+    document.getElementById("UserMsg").innerHTML = "";
+    document.getElementById("EmailMsg").innerHTML = "";
+    document.getElementById("PswMsg").innerHTML = "";
+    document.getElementById("CpswMsg").innerHTML = "";
+    document.getElementById("FacMsg").innerHTML = "";
+    document.getElementById("signupResult").innerHTML = "";
+}
+// ------------------------------------------------------------
+// Home page: button shows the price for 1 to 5 copies using a loop
+function showPrices() {
+    var text = "";
+    for ( var i = 1; i <= 5; i++ ){
+        text = text + i + " copies = " + (i * 160) + " SR<br>";
+    }
+    document.getElementById("priceList").innerHTML = text;
+}
+// ------------------------------------------------------------
+// Home page: mouse on the CPIS-358 book adds a green border and shows its price
+function bookOver() {
+    document.getElementById("book1").style.border = "3px solid green";
+    document.getElementById("bookCaption").innerHTML = "CPIS-358 book: 160 SR new, 95 SR used";
+}
+
+// ------------------------------------------------------------
+// Home page: mouse leaves the book, remove the border and the text
+function bookOut() {
+    document.getElementById("book1").style.border = "none";
+    document.getElementById("bookCaption").innerHTML = "";
+}
+// ------------------------------------------------------------
+// Home page: when you leave the search box, tell the user what they searched for
+function showSearch() {
+    var query = document.getElementById("searchBox").value;
+    if (query == "") {
+        document.getElementById("searchMsg").style.color = "red";
+        document.getElementById("searchMsg").innerHTML = "Please type a book name";
+    } else {
+        document.getElementById("searchMsg").style.color = "green";
+        document.getElementById("searchMsg").innerHTML = "Searching for: " + query;
+    }
+}
+// ------------------------------------------------------------
+// About page: button hides or shows the team section
+function toggleTeam() {
+    if (document.getElementById("teamSection").style.display == "none") {
+        document.getElementById("teamSection").style.display = "block";
+    } else {
+        document.getElementById("teamSection").style.display = "none";
+    }
+}
+
+// I tested it in my environment, and everything works perfectly.

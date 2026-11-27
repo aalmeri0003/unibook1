@@ -1,0 +1,6 @@
+.vs/
+bin/
+obj/
+*.user
+# old Web Forms database left on this computer
+App_Data/

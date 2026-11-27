@@ -1,0 +1,125 @@
+/*Header and Main Design through all the 4 files*/
+body{
+    background-color: #FAEBD7;
+    font-family: Arial, sans-serif;
+}
+header{
+    text-align: center;
+    background-color: #7ea87e;
+
+}
+h1{
+    color: #256172;
+}
+nav{
+    background-color: #aa885e;
+    padding: 15px;
+    text-align: center;
+}
+nav a{
+    color: darkblue;
+    padding: 20px;
+    margin: 15px;
+    text-decoration: none;
+}
+nav a:hover{
+    background-color: #c1bbb4 ;
+}
+table{
+    border: 3px double burlywood;
+    box-shadow: 3px 3px 4px rgb(63, 117, 104);
+}
+th, td{
+    border: 3px solid burlywood;
+    padding: 8px;
+}
+th{
+    background-color:#7ea87e;
+}
+footer{
+    background-color: #9eac92;
+    color: white;
+}
+.general{
+     background-color:  #ded0be;
+}
+.east  { 
+    position: relative; 
+    top: 0px; 
+    left: 5px; 
+    z-index: 1; 
+    background-color: #ded0be; 
+}
+.west  { 
+    position: relative; 
+    top: 0px; 
+    left: -5px; 
+    z-index: 1; 
+    background-color:  #ded0be }
+.north  { 
+    position: relative; 
+    top: -5px; 
+    left: 0px; 
+    z-index: 2; 
+    background-color:  #ded0be; }
+.south { 
+    position: relative; 
+    top: 5px; 
+    left: 0px; 
+    z-index: 1; 
+    background-color:  #ded0be
+}
+.below{
+    position: relative;
+    z-index: 1;
+}
+.above{
+    position: relative;
+    z-index: 2;
+    left: -40px;
+
+}
+.title{
+    position: relative;
+    z-index: 3;
+    left: -40px;
+}
+.z{
+    position: relative;
+}
+.place{
+    text-align: center;
+}
+
+/*Assignment 3 (ASP.NET): menu items for the logged in user*/
+.welcome{
+    color: #256172;
+    font-weight: bold;
+    margin-left: 15px;
+}
+.inline-form{
+    display: inline;
+}
+.link-button{
+    background: none;
+    border: none;
+    color: darkblue;
+    font-size: 16px;
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer;
+}
+.link-button:hover{
+    background-color: #c1bbb4;
+}
+/*form error messages*/
+.error, .text-danger{
+    color: red;
+}
+/*login and sign up pages*/
+.form-floating{
+    margin-bottom: 10px;
+}
+.form-floating label{
+    display: block;
+}
