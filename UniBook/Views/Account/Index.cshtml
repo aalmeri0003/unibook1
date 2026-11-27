@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Account";
+    var cookies = Context.Request.Cookies;
+}
+
+<h2>Account Information</h2>
+
+<section>
+    <h3>Cookie Values</h3>
+    <ul>
+        @foreach (var c in cookies)
+        {
+            <li>@c.Key : @c.Value</li>
+        }
+    </ul>
+</section>
+
+<section>
+    <h3>Session Values</h3>
+    <ul>
+        <li>Session id : @ViewBag.sessionId</li>
+        <li>Username : @ViewBag.sessionUserName</li>
+    </ul>
+</section>
+
+<p><a href="@Url.Action("Index", "Home")">Back to Home</a></p>
