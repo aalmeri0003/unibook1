@@ -169,3 +169,7 @@ footer{
     color: green;
     font-weight: bold;
 }
+/*User Account page: long cookie values go to a new line instead of going off the page*/
+main li{
+    overflow-wrap: anywhere;
+}
