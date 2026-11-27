@@ -90,9 +90,3 @@ footer{
 .place{
     text-align: center;
 }
-/*Welcome text in the menu when the user is logged in (Assignment 3)*/
-.welcome{
-    color: #256172;
-    font-weight: bold;
-    margin-left: 15px;
-}
