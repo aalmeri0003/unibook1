@@ -118,7 +118,7 @@ footer{
 }
 /*login and sign up pages*/
 /*the form box in the middle of the page*/
-.col-md-4{
+.col-lg-6{
     max-width: 380px;
     margin: 20px auto;
     padding: 20px;
@@ -161,7 +161,7 @@ footer{
     background-color: #256172;
 }
 /*hide the "use another service to log in" box, we only use UniBook accounts*/
-.col-md-offset-2{
+.col-lg-offset-2{
     display: none;
 }
 /*green message after a book is added, updated or deleted*/
