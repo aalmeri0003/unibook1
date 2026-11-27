@@ -9,7 +9,18 @@ namespace UniBook.Controllers
         {
             ViewBag.sessionId = HttpContext.Session.GetString("id");
             ViewBag.sessionUserName = HttpContext.Session.GetString("username");
+            ViewBag.homeVisits = HttpContext.Session.GetInt32("homeVisits");
+            ViewBag.lastBook = HttpContext.Session.GetString("lastBook");
             return View();
+        }
+
+        // Clear Session button: removes everything saved in the session
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ClearSession()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

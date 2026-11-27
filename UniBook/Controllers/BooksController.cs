@@ -64,6 +64,9 @@ namespace UniBook.Controllers
                 return NotFound();
             }
 
+            // remember the last book the user opened (shown on the User Account page)
+            HttpContext.Session.SetString("lastBook", book.courseCode + " - " + book.title);
+
             return View(book);
         }
 

@@ -20,7 +20,12 @@
     <ul>
         <li>Session id : @ViewBag.sessionId</li>
         <li>Username : @ViewBag.sessionUserName</li>
+        <li>Home page visits : @ViewBag.homeVisits</li>
+        <li>Last book opened : @ViewBag.lastBook</li>
     </ul>
+    <form asp-action="ClearSession" method="post">
+        <input type="submit" value="Clear Session" />
+    </form>
 </section>
 
 <p><a href="@Url.Action("Index", "Home")">Back to Home</a></p>

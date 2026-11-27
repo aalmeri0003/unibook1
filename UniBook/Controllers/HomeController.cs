@@ -12,8 +12,17 @@ namespace UniBook.Controllers
             ViewBag.LastVisit = Request.Cookies["lastVisit"];
             SetCookies("lastVisit", DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"));
 
-            // create a session id
-            SetSession("id", Guid.NewGuid().ToString());
+            // create a session id only the first time, so it stays the same during the visit
+            if (HttpContext.Session.GetString("id") == null)
+            {
+                SetSession("id", Guid.NewGuid().ToString());
+            }
+
+            // count how many times the home page was opened in this session
+            int homeVisits = HttpContext.Session.GetInt32("homeVisits") ?? 0;
+            homeVisits = homeVisits + 1;
+            HttpContext.Session.SetInt32("homeVisits", homeVisits);
+            ViewBag.HomeVisits = homeVisits;
 
             // Check if the user is authenticated
             if (User.Identity != null && User.Identity.IsAuthenticated)
