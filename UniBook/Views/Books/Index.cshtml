@@ -6,6 +6,11 @@
 
 <h2>Books</h2>
 
+@if (ViewBag.Message != null)
+{
+    <p class="success">@ViewBag.Message</p>
+}
+
 @if (ViewBag.SearchBook != null)
 {
     <p>Search results for: <b>@ViewBag.SearchBook</b> (@Model.Count() found) <a asp-action="Index">Show all books</a></p>

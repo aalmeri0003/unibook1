@@ -123,3 +123,8 @@ footer{
 .form-floating label{
     display: block;
 }
+/*green message after a book is added, updated or deleted*/
+.success{
+    color: green;
+    font-weight: bold;
+}

@@ -18,6 +18,10 @@ namespace UniBook.Controllers
         // GET: Books  (RETRIEVE: show all books)
         public async Task<IActionResult> Index()
         {
+            // show the message saved after add / edit / delete, then remove it so it shows only once
+            ViewBag.Message = HttpContext.Session.GetString("message");
+            HttpContext.Session.Remove("message");
+
             return _context.Book != null ?
                         View(await _context.Book.OrderBy(b => b.faculty).ThenBy(b => b.courseCode).ToListAsync()) :
                         Problem("Entity set 'ApplicationDbContext.Book'  is null.");
@@ -99,6 +103,7 @@ namespace UniBook.Controllers
             {
                 _context.Add(book);
                 await _context.SaveChangesAsync();
+                HttpContext.Session.SetString("message", "The book " + book.courseCode + " was added.");
                 return RedirectToAction(nameof(Index));
             }
             return View(book);
@@ -138,6 +143,7 @@ namespace UniBook.Controllers
                 {
                     _context.Update(book);
                     await _context.SaveChangesAsync();
+                    HttpContext.Session.SetString("message", "The book " + book.courseCode + " was updated.");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -187,6 +193,7 @@ namespace UniBook.Controllers
             if (book != null)
             {
                 _context.Book.Remove(book);
+                HttpContext.Session.SetString("message", "The book " + book.courseCode + " was deleted.");
             }
 
             await _context.SaveChangesAsync();
