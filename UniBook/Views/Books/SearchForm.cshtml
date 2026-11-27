@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h2>Search for a Book</h2>
+<hr />
+<form asp-action="ShowSearchFormResult">
+    <p>
+        <label for="SearchBook"><b>Book name or course code:</b></label>
+        <input name="SearchBook" id="SearchBook" size="40" />
+    </p>
+    <p>
+        <input type="submit" value="Search" />
+    </p>
+</form>
+
+<p><a asp-action="Index">Back to List</a></p>

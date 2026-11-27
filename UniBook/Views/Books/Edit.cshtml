@@ -1,0 +1,22 @@
+@model UniBook.Models.Book
+
+@{
+    ViewData["Title"] = "Edit Book";
+}
+
+<h2>Edit Book</h2>
+<hr />
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="error"></div>
+    <input type="hidden" asp-for="id" />
+    <partial name="_BookFields" />
+    <p>
+        <input type="submit" value="Save" />
+    </p>
+</form>
+
+<p><a asp-action="Index">Back to List</a></p>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,49 @@
+@model IEnumerable<UniBook.Models.Book>
+
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h2>Books</h2>
+
+@if (ViewBag.SearchBook != null)
+{
+    <p>Search results for: <b>@ViewBag.SearchBook</b> (@Model.Count() found) <a asp-action="Index">Show all books</a></p>
+}
+
+<p>
+    <a asp-action="Create">Add New Book</a> |
+    <a asp-action="SearchForm">Search</a>
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.courseCode)</th>
+            <th>@Html.DisplayNameFor(model => model.title)</th>
+            <th>@Html.DisplayNameFor(model => model.faculty)</th>
+            <th>@Html.DisplayNameFor(model => model.version)</th>
+            <th>@Html.DisplayNameFor(model => model.newPrice)</th>
+            <th>@Html.DisplayNameFor(model => model.usedPrice)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.courseCode)</td>
+                <td>@Html.DisplayFor(modelItem => item.title)</td>
+                <td>@Html.DisplayFor(modelItem => item.faculty)</td>
+                <td>@Html.DisplayFor(modelItem => item.version)</td>
+                <td>@Html.DisplayFor(modelItem => item.newPrice)</td>
+                <td>@Html.DisplayFor(modelItem => item.usedPrice)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

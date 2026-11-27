@@ -1,0 +1,37 @@
+@model UniBook.Models.Book
+
+<p>
+    <label asp-for="courseCode"></label>
+    <input asp-for="courseCode" size="12" />
+    <span asp-validation-for="courseCode" class="error"></span>
+</p>
+<p>
+    <label asp-for="title"></label>
+    <input asp-for="title" size="60" />
+    <span asp-validation-for="title" class="error"></span>
+</p>
+<p>
+    <label asp-for="faculty"></label>
+    <select asp-for="faculty">
+        <option value="">-- Choose --</option>
+        <option value="Computing">Faculty of Computing and Information Technology</option>
+        <option value="Engineering">Faculty of Engineering</option>
+        <option value="Business">Faculty of Business</option>
+    </select>
+    <span asp-validation-for="faculty" class="error"></span>
+</p>
+<p>
+    <label asp-for="version"></label>
+    <input asp-for="version" size="5" />
+    <span asp-validation-for="version" class="error"></span>
+</p>
+<p>
+    <label asp-for="newPrice"></label>
+    <input asp-for="newPrice" size="6" />
+    <span asp-validation-for="newPrice" class="error"></span>
+</p>
+<p>
+    <label asp-for="usedPrice"></label>
+    <input asp-for="usedPrice" size="6" />
+    <span asp-validation-for="usedPrice" class="error"></span>
+</p>
