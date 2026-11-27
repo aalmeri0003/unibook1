@@ -26,6 +26,8 @@ namespace UniBook.Controllers
         // GET: Books/SearchForm
         public IActionResult SearchForm()
         {
+            // read the last search from the cookie (empty the first time)
+            ViewBag.LastSearch = Request.Cookies["lastSearch"];
             return View();
         }
 
@@ -41,6 +43,16 @@ namespace UniBook.Controllers
             {
                 return RedirectToAction(nameof(Index));
             }
+
+            // save what the user searched for in a cookie for 15 days
+            CookieOptions options = new CookieOptions
+            {
+                Expires = DateTime.Now.AddDays(15),
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.Strict
+            };
+            Response.Cookies.Append("lastSearch", SearchBook, options);
 
             var filteredBooks = await _context.Book
                                          .Where(j => j.title.Contains(SearchBook) || j.courseCode.Contains(SearchBook))

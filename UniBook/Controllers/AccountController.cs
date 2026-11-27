@@ -22,5 +22,17 @@ namespace UniBook.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction(nameof(Index));
         }
+
+        // Delete Cookies button: removes the cookies UniBook saved
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteCookies()
+        {
+            Response.Cookies.Delete("lastVisit");
+            Response.Cookies.Delete("userName");
+            Response.Cookies.Delete("browserName");
+            Response.Cookies.Delete("lastSearch");
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
